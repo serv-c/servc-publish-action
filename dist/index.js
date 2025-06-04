@@ -31870,7 +31870,6 @@ const payload = {
 const is_bad_html = (text) => text.toLowerCase().startsWith('<!DOCTYPE html>'.toLowerCase());
 
 const publishdag = async ()=>{
-    let success = false;
     try {
         const response = await fetch(
             api_url, 
@@ -31892,8 +31891,6 @@ const publishdag = async ()=>{
                     core.info(`Response: ${idtext}`);
                     const responseJSON = JSON.parse(idtext);
                     if(responseJSON && (responseJSON.progress === 100 || responseJSON.isError)){
-                        success = !!responseJSON.isError;
-
                         if(responseJSON.isError && !debug) {
                             core.setFailed(`Error: ${responseJSON.responseBody}`);
                             break;
@@ -31908,10 +31905,6 @@ const publishdag = async ()=>{
         }
     } catch (error) {
         core.error(`Error: ${error}`);
-    }
-
-    if(!success){
-        core.setFailed('Failed to send data');
     }
 };
 
