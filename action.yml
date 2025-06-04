@@ -12,8 +12,9 @@ inputs:
   api_token:
     description: 'API token for authentication'
     required: true
-  retrycount:
-    description: 'Number of retries to send telemetry information'
+  debug:
+    description: 'Enable debug mode'
+    default: 'false'
     required: false
 
 runs:
