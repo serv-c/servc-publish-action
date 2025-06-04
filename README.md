@@ -4,7 +4,7 @@ To publish a dag, simply use the github action as part of your pipeline:
 
 ```yaml
 - name: Publish Dag
-  uses: serv-c/servc-publish-action
+  uses: serv-c/servc-publish-action@main
   if: github.ref_name == 'main'
   with:
     api_token: ${{ secrets.API_TOKEN }}
