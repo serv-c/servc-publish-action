@@ -1,0 +1,21 @@
+name: 'Publish Dag'
+description: 'Publish Dag to Serv-C API'
+inputs:
+  dag_json:
+    description: 'Location of the dag JSON file to be published'
+    default: 'dag.json'
+    required: false
+  api_url:
+    description: 'SERV-C API URL to publish the dag'
+    default: 'https://api.servc.io'
+    required: false
+  api_token:
+    description: 'API token for authentication'
+    required: true
+  retrycount:
+    description: 'Number of retries to send telemetry information'
+    required: false
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

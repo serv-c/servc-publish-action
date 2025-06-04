@@ -1,0 +1,19 @@
+name: 'Unit Tests'
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Local Action
+        id: test
+        uses: ./
+        with:
+          api_token: '1234'

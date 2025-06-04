@@ -1,0 +1,12 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.vscode-github-actions",
+        "GitHub.copilot",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
