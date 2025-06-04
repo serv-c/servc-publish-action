@@ -31838,12 +31838,11 @@ const api_url = core.getInput('api_url') || "https://api.servc.io";
 const api_token = core.getInput('api_token');
 const debug = core.getInput('debug').toLowerCase() === 'true';
 
-const dagText = fs.readFileSync(dag_json, 'utf8');
-if (!dagText) {
+const dag = fs.readFileSync(dag_json, 'utf8');
+if (!dag) {
     core.setFailed(`Failed to read DAG file: ${dag_json}`);
     return;
 }
-dag = JSON.parse(dagText);
 
 const options = (method = "GET", extraOpts = {}) => ({
     method,
@@ -31916,6 +31915,7 @@ const publishdag = async ()=>{
 };
 
 publishdag().then(()=> true);
+
 module.exports = __webpack_exports__;
 /******/ })()
 ;
