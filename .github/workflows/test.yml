@@ -1,6 +1,9 @@
 name: 'Unit Tests'
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -16,4 +19,5 @@ jobs:
         id: test
         uses: ./
         with:
-          api_token: '1234'
+          api_token: ${{ secrets.API_TOKEN }}
+          debug: 'true'
