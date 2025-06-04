@@ -31902,6 +31902,7 @@ const publishdag = async ()=>{
                         break;
                     }
                 }
+                await new Promise(r => setTimeout(r, 2000))
             }
 
         }
