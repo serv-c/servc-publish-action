@@ -37,10 +37,11 @@ const payload = {
     }
 }
 
+core.info('Debug enabled', debug)
 if(debug){
     core.info(api_url)
-    core.info(options)
-    core.info(payload)
+    core.info(JSON.stringify(options()))
+    core.info(JSON.stringify(payload))
 }
 
 const is_bad_html = (text) => text.toLowerCase().startsWith('<!DOCTYPE html>'.toLowerCase());
