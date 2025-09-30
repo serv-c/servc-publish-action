@@ -37,6 +37,12 @@ const payload = {
     }
 }
 
+if(debug){
+    core.info(api_url)
+    core.info(options)
+    core.info(payload)
+}
+
 const is_bad_html = (text) => text.toLowerCase().startsWith('<!DOCTYPE html>'.toLowerCase());
 
 const publishdag = async ()=>{
