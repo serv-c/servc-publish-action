@@ -37,10 +37,11 @@ const payload = {
     }
 }
 
+console.log('Debug enabled', debug)
 if(debug){
-    core.info(api_url)
-    core.info(options)
-    core.info(payload)
+    console.log(api_url)
+    console.log(options)
+    console.log(payload)
 }
 
 const is_bad_html = (text) => text.toLowerCase().startsWith('<!DOCTYPE html>'.toLowerCase());
