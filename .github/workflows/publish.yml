@@ -45,7 +45,7 @@ jobs:
 
       - name: "Get Previous tag"
         id: previoustagold
-        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        uses: "WyriHaximus/github-action-get-previous-tag@v2"
 
       - name: Conventional Changelog Action
         id: changelog
